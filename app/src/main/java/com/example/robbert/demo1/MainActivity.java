@@ -1,15 +1,28 @@
 package com.example.robbert.demo1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.View;
+import android.widget.Button;
+import android.util.Log;
+
 
 public class MainActivity extends Activity {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // turn off title
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        // build the view
         setContentView(R.layout.activity_main);
     }
 
@@ -33,5 +46,15 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void newGame(View v) {
+        Intent i = new Intent(getApplicationContext(), GameActivity.class);
+        v.getContext().startActivity(i);
+    }
+
+    public void onQuit(View v) {
+        // TODO Auto-generated method stub
+        finish();
     }
 }

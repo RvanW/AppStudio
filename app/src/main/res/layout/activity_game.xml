@@ -1,0 +1,170 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc"
+    tools:context="com.example.robbert.demo1.GameActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:keepScreenOn="true" android:textColor="#33b5e5"
+        android:textStyle="bold" android:textSize="50sp" android:gravity="center|top"
+        android:text="@string/title"
+        android:layout_marginTop="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/guessedNumber"
+        android:textSize="70sp"
+        android:layout_alignBottom="@+id/errorMessage"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/errorMessage"
+        android:gravity="center_horizontal"
+        android:textSize="30sp"
+        android:textColor="#f6f6f6"
+        android:layout_marginBottom="52dp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="20dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:id="@+id/linearLayout3"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/between"
+            android:id="@+id/textView3"
+            android:textSize="30sp"
+            android:textColor="#f6f6f6"
+            android:layout_above="@+id/linearLayout3"
+            android:layout_alignLeft="@+id/linearLayout3"
+            android:layout_alignStart="@+id/linearLayout3" />
+
+        <EditText
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/minNumb"
+            android:gravity="center"
+            android:background="@color/black_overlay"
+            android:textSize="70sp"
+            android:maxLength="3"
+            android:layout_above="@+id/errorMessage"
+            android:layout_toLeftOf="@+id/errorMessage"
+            android:layout_gravity="right" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:id="@+id/linearLayout2"
+        android:layout_above="@+id/guessedNumber"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="37dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/and"
+            android:id="@+id/textView4"
+            android:textSize="30sp"
+            android:textColor="#f6f6f6"
+            android:layout_above="@+id/linearLayout2"
+            android:layout_alignRight="@+id/errorMessage"
+            android:layout_alignEnd="@+id/errorMessage" />
+
+        <EditText
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/maxNumb"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/black_overlay"
+            android:layout_alignTop="@+id/minNumb"
+            android:textAlignment="center"
+            android:textSize="70sp"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4"
+            android:maxLength="3"
+            android:layout_below="@+id/minNumb"
+            android:layout_alignRight="@+id/textView4"
+            android:layout_toLeftOf="@+id/minNumb"
+            android:layout_toRightOf="@+id/minNumb"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="false"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="@string/guess"
+            android:id="@+id/button2"
+            android:onClick="onGuess"
+            android:layout_above="@+id/linearLayout"
+            android:layout_toRightOf="@+id/minNumb"
+            android:layout_toEndOf="@+id/minNumb"
+            android:layout_weight="1.23"
+            android:textSize="30sp"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quit"
+            android:id="@+id/button3"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="26dp"
+            android:onClick="onQuit"
+            android:nestedScrollingEnabled="false"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
