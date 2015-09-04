@@ -12,4 +12,5 @@
     <string name="and">Maximum</string>
     <string name="guess">Guess</string>
     <string name="title">Guess a number</string>
+    <string name="description">This is my very first android app, it\'s a simple game where the app tries to \'guess\' a number between a specified range.</string>
 </resources>
