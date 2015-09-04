@@ -1,23 +1,12 @@
 package com.example.robbert.demo1;
 
-import com.example.robbert.demo1.util.SystemUiHider;
-
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 
-import java.io.IOException;
 import java.util.*;
 
 public class GameActivity extends Activity {
@@ -33,7 +22,6 @@ public class GameActivity extends Activity {
     }
 
     public void onQuit(View v) {
-        // TODO Auto-generated method stub
         finish();
     }
 

@@ -7,13 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.View;
-import android.widget.Button;
-import android.util.Log;
 
 
 public class MainActivity extends Activity {
-
-    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +49,6 @@ public class MainActivity extends Activity {
     }
 
     public void onQuit(View v) {
-        // TODO Auto-generated method stub
         finish();
     }
 }
