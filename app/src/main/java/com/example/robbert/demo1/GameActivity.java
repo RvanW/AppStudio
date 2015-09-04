@@ -53,7 +53,7 @@ public class GameActivity extends Activity {
                 error.setText("");
 
             } else {
-                error.setText("Minimum value should be bigger than the maximum");
+                error.setText("Minimum value should be less than the maximum");
                 guessedNumber.setText("");
             }
         }
